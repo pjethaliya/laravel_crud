@@ -8,6 +8,7 @@ use App\Photo;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminUsersController extends Controller
 {
@@ -20,7 +21,8 @@ class AdminUsersController extends Controller
     {
         //
         $users = User::all();
-        return view('admin.users.index',compact('users'));
+        $current_user = Auth::user();
+        return view('admin.users.index',compact('users','current_user'));
     }
 
     /**
@@ -115,6 +117,7 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id)->delete();
+        return redirect('/admin/users');
     }
 }

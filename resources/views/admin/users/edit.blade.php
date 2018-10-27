@@ -46,9 +46,21 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Create User',['class'=>'btn-primary']) !!}
+                {!! Form::submit('Update User',['class'=>'btn-primary col-sm-6']) !!}
             </div>
             {!! Form::close() !!}
+
+
+            {!! Form::open(["method"=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]]) !!}
+                {{csrf_field()}}
+
+                <div class="form-group">
+                    {!! Form::submit('Delete User',['class'=>'btn-primary col-sm-6']) !!}
+                </div>
+            {!! Form::close() !!}
+
+
+
         </div>
     </div>
     <div class="row">
