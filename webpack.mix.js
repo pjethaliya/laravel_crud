@@ -28,5 +28,15 @@ mix.scripts([
     'resources/js/libs/bootstrap.js',
     'resources/js/libs/metisMenu.js',
     'resources/js/libs/sb-admin-2.js',
-    'resources/js/libs/scripts.js'
+    'resources/js/libs/scripts.js',
+    'resources/js/libs/second-event.js'
 ], 'public/js/libs.js');
+
+mix.styles([
+    'resources/css/default/default-auth.css'
+
+],'public/css/defs.css');
+
+mix.scripts([
+    'resources/js/libs/default/default-auth.js'
+],'public/js/defs.js');

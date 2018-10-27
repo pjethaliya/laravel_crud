@@ -8,9 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link href="{{asset('css/defs.css')}}" rel="stylesheet">
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -76,5 +76,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{asset('js/defs.js')}}"></script>
 </body>
 </html>
